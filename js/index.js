@@ -1,5 +1,7 @@
 let uuid = require('uuid');
 let uuidv4 = uuid.v4;
+let path = require('path');
+let routes = require('./routes');
 let express = require('express');
 let app = express();
 
@@ -20,6 +22,8 @@ let server = app.listen(8080, function () {
 
 	console.log("Webserver is running at http://%s:%s", host, port)
 })
+app.use('/public/', express['static'] (path.join(__dirname, '/public')));
+routes.initialize(app, new express.Router());
 
 app.get('/api/v1/users/:userId', (req, res) => {
 
@@ -31,5 +35,3 @@ app.get('/api/v1/users/:userId', (req, res) => {
 //	let user = {vorname: "Anne", nachname: "Musterfrau", userid: `${req.params.userId}`}
 	return res.send(user);
 });
-
-
