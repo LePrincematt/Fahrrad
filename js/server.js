@@ -2,7 +2,7 @@ let express = require('express');
 let app = express();
 
 let idCounter = 0;
-let customers{};
+let customers = new Array ();
 
 //REST API abrufen
 app.get('/api/v1/customers', (req, res) => {
