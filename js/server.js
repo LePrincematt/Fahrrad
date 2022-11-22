@@ -15,7 +15,7 @@ app.post('/api/v1/customers', (req, res) => {
 	let customerID = 'id' + idCounter;	//erstellt eine Variable, die die ID ist, wenn man einen Kunden anlegt
 	idCounter = idCounter + 1;
 	let customer = req.body;	//Parameter (Vorname, Name) im Body mitschicken (bspw. in Insomnia mgl.)
-	customers[customerID = customer;
+	customers[customerID = customer];
 	res.send(customerID);		//zuweisen der ID, siehe let customerID
 });
 
