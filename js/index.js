@@ -3,9 +3,38 @@ let uuidv4 = uuid.v4;
 let path = require('path');
 let routes = require('./routes');
 let express = require('express');
+let exphbs = require('express-handlebars');
 let app = express();
-
+let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
+
+module.exports = function(app) {
+	app.set('port', process.env.PORT || 8080);
+	app.set('views', __dirname + '/views');
+	app.set('view engine', 'handlebars');
+
+	app.engine('handlebars', exphbs.create({
+		defaultLayout: 'main',
+		layoutsDir: app.get('views') + '/layouts'
+	}).engine);
+
+	app.use(bodyParser.urlencoded({enxtended: true}));
+	app.use(bodyParser.json());
+	app.use(cookieParser('key'));
+	app.use(session({
+		secret: 'key',
+		saveUnitialized: true, 
+		resave: true
+	}));
+
+	app.use('/public/', express['static'](path.join(__dirname, '/public')))
+
+	routes.initialize(app, new express.Router());
+
+	return app;
+};
+
+/*let bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
@@ -34,4 +63,4 @@ app.get('/api/v1/users/:userId', (req, res) => {
 
 //	let user = {vorname: "Anne", nachname: "Musterfrau", userid: `${req.params.userId}`}
 	return res.send(user);
-});
+});*/
