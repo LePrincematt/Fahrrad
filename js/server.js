@@ -4,8 +4,6 @@ let app = express();
 let idCounter = 0;
 let customers{};
 
-let customers {}
-
 //REST API abrufen
 app.get('/api/v1/customers', (req, res) => {
 	let userID = Object.keys(customers);	//Gibt Liste der Schlüssel aus Customers zurück
