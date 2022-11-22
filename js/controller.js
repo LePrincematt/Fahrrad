@@ -1,5 +1,5 @@
 //let client = require('./client');
-let request = require('request');
+//let request = require('request');
 
 module.exports= {
     index: function(req, res){
