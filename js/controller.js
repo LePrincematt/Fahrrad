@@ -14,9 +14,11 @@ module.exports= {
     },
     processLogin: function(req, res) {
         var userObj = {
-            email: req.body.email,
+            email: req.body.username,
             password: req.body.password
         };
+
+        //res.redirect('/'), wenn User gefunden
     },
     addBooking: function(req, res) {
         res.redirect('/');
