@@ -1,8 +1,14 @@
+let uuid = require('uuid');
+let uuidv4 = uuid.v4;
 let express = require('express');
 let app = express();
+let bodyParser = require('body-parser');
 
 let idCounter = 0;
 let customers = new Array ();
+
+app.use(bodyParser.urlencoded({enxtended: true}));
+app.use(bodyParser.json());
 
 //REST API abrufen
 app.get('/api/v1/customers', (req, res) => {
