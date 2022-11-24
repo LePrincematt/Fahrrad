@@ -1,4 +1,4 @@
-let controller = require('./controller');
+/*let controller = require('./controller');
 
 module.exports.initialize = function(app, router) {
     router.get('/', controller.index);
@@ -11,4 +11,4 @@ module.exports.initialize = function(app, router) {
 
     app.use('/', router);
 
-};
+};*/

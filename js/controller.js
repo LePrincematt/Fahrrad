@@ -1,6 +1,6 @@
 //let client = require('./client');
 //let request = require('request');
-
+/*
 module.exports= {
     index: function(req, res){
         if (!req.session.userID) {
@@ -26,4 +26,4 @@ module.exports= {
     bookedRides: function(req, res) {
         res.json('success');
     }
-};
+};*/
