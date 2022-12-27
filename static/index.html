@@ -15,6 +15,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="buttons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -331,10 +333,11 @@
                                         <label for="date_malebike">Datum (dd.mm.yyyy)</label>
                                         <div class="invalid-feedback" data-sb-feedback="date_malebike:required">Bitte geben Sie ein Datum in Form von "dd.mm.yyyy" an.</div>
                                     </div>
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
+                                    <button class="btn btn-primary" id="malebike_available"data-bs-dismiss="modal" onclick="malebikeAvailable()">
                                         <i class="fa-solid fa-cart-shopping"></i>&nbsp;
                                         Verfügbarkeit üerprüfen
                                     </button>
+                                    <div id="return_availibility"></div>
                                 </div>
                             </div>
                         </div>
