@@ -7,6 +7,7 @@ function malebikeAvailable() {
     let male_availability = {
         data: document.getElementById('date_malebike')
     }
+    console.log("Hat geklappt");
     axios.post('/api/v1/malebike', male_availability)
     .then(function (res) {
         let html = "<div>";
