@@ -55,12 +55,12 @@ app.get('/api/v1/malebike', (req, res) => {
 	}
 	else{
 		while(i < malebike.length){
-			if(malebike[i] == male_availability[i]){
+			if(malebike[i] == male_availability[0]){
 				return res.send(false);
 			}
 			else{i++}
 		}
-		malebike.push(male_availability);
+		malebike.push(male_availability.data);
 		return res.send(true);
 	}
 });
