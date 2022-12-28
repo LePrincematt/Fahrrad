@@ -4,9 +4,10 @@ import axios from 'axios';
 
 function malebikeAvailable() {
     //male_availability.push(document.getElementById('date_malebike'));
-    axios.post('/api/v1/malebike', {
-        male_availability: document.getElementById('date_malebike')
-    })
+    let male_availability = {
+        data: document.getElementById('date_malebike')
+    }
+    axios.post('/api/v1/malebike', male_availability)
     .then(function (res) {
         let html = "<div>";
         if(res == true) {
@@ -15,6 +16,7 @@ function malebikeAvailable() {
             html += "</p>";
             html += "</div>";
             document.getElementById("return_availibility").innerHTML = html;
+            console.log("Verfügbar");
         }
         else {
             html += "<p>";
@@ -22,6 +24,9 @@ function malebikeAvailable() {
             html += "</p>";
             html += "</div>";
             document.getElementById("return_availibility").innerHTML = html;
+            console.log("Nicht verfügbar");
         }
     })
+    location.href = "login.html";
+
 };
