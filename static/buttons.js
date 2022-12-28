@@ -1,5 +1,5 @@
-const axios = require('axios'); 
-//import axios from 'axios';
+//const axios = require('axios'); 
+import axios from 'axios';
 //let male_availability = [];
 //let html = "<div>";
 
