@@ -1,4 +1,4 @@
-const axios = require('axios/dist/browser/axios.cjs'); 
+const axios = require('axios'); 
 //import axios from 'axios';
 //let male_availability = [];
 //let html = "<div>";
