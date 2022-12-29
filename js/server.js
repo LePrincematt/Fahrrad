@@ -67,7 +67,10 @@ app.post('/api/v1/malebike', (req, res) => {
 				console.log("ist bereits vorhanden");
 				return res.send("0");
 			}
-			else{i++}
+			else{
+				i++;
+				console.log(i);
+			}
 		}
 		malebike.push(req.body.data);
 		console.log("geht noch");
