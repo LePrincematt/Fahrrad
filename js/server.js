@@ -12,6 +12,8 @@ let i = 0;
 app.use(bodyParser.urlencoded({enxtended: true}));
 app.use(bodyParser.json());
 
+server.listen(8080, '127.0.0.1');
+
 //REST API abrufen
 app.get('/api/v1/customers', (req, res) => {
 	let userID = Object.keys(customers);	//Gibt Liste der Schlüssel aus Customers zurück
