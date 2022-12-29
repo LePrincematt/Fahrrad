@@ -12,7 +12,7 @@ function malebikeAvailable() {
     axios.post('/api/v1/malebike', male_availability)
     .then(function (res) {
         console.log(res);
-        let html = "<div>";
+        /*let html = "<div>";
         if(res == "1") {
             html += "<p>";
             html += "Verfügbar";
@@ -28,7 +28,7 @@ function malebikeAvailable() {
             html += "</div>";
             document.getElementById("return_availibility").innerHTML = html;
             console.log("Nicht verfügbar");
-        }
+        }*/
     })
     //location.href = "login.html";
 
