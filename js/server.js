@@ -61,12 +61,12 @@ app.post('/api/v1/malebike', (req, res) => {
 	}
 	else{
 		while(i < malebike.length){
-			if(malebike[i] == male_availability[0]){
+			if(malebike[i] == req[0]){
 				return res.send("0");
 			}
 			else{i++}
 		}
-		malebike.push(male_availability.data);
+		malebike.push(req.data);
 		return res.send("1");
 	}
 	console.log("Yes");
