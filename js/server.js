@@ -71,6 +71,7 @@ app.post('/api/v1/malebike', (req, res) => {
 		}
 		malebike.push(req[0]);
 		console.log("geht noch");
+		console.log(malebike);
 		return res.send("1");
 	}
 	console.log("Yes");
