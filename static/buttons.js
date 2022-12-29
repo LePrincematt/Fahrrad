@@ -12,7 +12,7 @@ function malebikeAvailable() {
     axios.post('/api/v1/malebike', male_availability)
     .then(function (res) {
         let html = "<div>";
-        if(res == true) {
+        if(res == 1) {
             html += "<p>";
             html += "Verfügbar";
             html += "</p>";

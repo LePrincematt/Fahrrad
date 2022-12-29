@@ -69,5 +69,5 @@ app.post('/api/v1/malebike', (req, res) => {
 		malebike.push(male_availability.data);
 		return res.send(true);
 	}*/
-	return res.send(true);
+	return res.send(1);
 });
