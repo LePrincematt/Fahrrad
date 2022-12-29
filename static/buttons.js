@@ -11,6 +11,7 @@ function malebikeAvailable() {
     console.log("Hat geklappt");
     axios.post('/api/v1/malebike', male_availability)
     .then(function (res) {
+        console.log(res);
         let html = "<div>";
         if(res == "1") {
             html += "<p>";
