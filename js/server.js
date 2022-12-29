@@ -58,16 +58,19 @@ app.put('/api/v1/customers/:userID', (req, res) => {
 app.post('/api/v1/malebike', (req, res) => {
 	console.log(req);
 	if(malebike.length == 0){
+		console.log("length 0");
 		return res.send("1");
 	}
 	else{
 		while(i < malebike.length){
 			if(malebike[i] == req[0]){
+				console.log("ist bereits vorhanden");
 				return res.send("0");
 			}
 			else{i++}
 		}
-		malebike.push(req.data);
+		malebike.push(req[0]);
+		console.log("geht noch");
 		return res.send("1");
 	}
 	console.log("Yes");
