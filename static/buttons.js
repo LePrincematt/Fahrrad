@@ -9,7 +9,7 @@ function malebikeAvailable() {
         data: document.getElementById('date_malebike')
     }
     console.log(male_availability);
-    console.log("Hat geklappt");
+    //console.log("Hat geklappt");
     axios.post('/api/v1/malebike', male_availability)
     .then(function (res) {
         console.log(res);
