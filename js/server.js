@@ -56,7 +56,7 @@ app.put('/api/v1/customers/:userID', (req, res) => {
 
 //Verfübarkeit für ein Fahrrad prüfen
 app.post('/api/v1/malebike', (req, res) => {
-	console.log(req);
+	console.log(req.body);
 	if(malebike.length == 0){
 		console.log("length 0");
 		return res.send("1");

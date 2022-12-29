@@ -5,10 +5,10 @@
 
 function malebikeAvailable() {
     //male_availability.push(document.getElementById('date_malebike'));
-    /*let male_availability = {
+    let male_availability = {
         data: document.getElementById('date_malebike').value
-    }*/
-    let male_availability = new Array (document.getElementById('date_malebike').value);
+    }
+    //let male_availability = new Array (document.getElementById('date_malebike').value);
     console.log(male_availability.data);
     console.log("Hat geklappt");
     axios.post('/api/v1/malebike', male_availability)
