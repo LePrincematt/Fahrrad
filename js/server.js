@@ -56,7 +56,7 @@ app.put('/api/v1/customers/:userID', (req, res) => {
 
 //Verfübarkeit für ein Fahrrad prüfen
 app.get('/api/v1/malebike', (req, res) => {
-	if(malebike.length == 0){
+	/*if(malebike.length == 0){
 		return res.send(true);
 	}
 	else{
@@ -68,5 +68,6 @@ app.get('/api/v1/malebike', (req, res) => {
 		}
 		malebike.push(male_availability.data);
 		return res.send(true);
-	}
+	}*/
+	return res.send(true);
 });
