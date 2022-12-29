@@ -12,7 +12,11 @@ let i = 0;
 app.use(bodyParser.urlencoded({enxtended: true}));
 app.use(bodyParser.json());
 
-server.listen(8080, '127.0.0.1');
+let server = app.listen(8080, function () {
+	let port = server.address().port;
+
+	console.log("Webserver is running on port " + port);
+});
 
 //REST API abrufen
 app.get('/api/v1/customers', (req, res) => {
