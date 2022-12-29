@@ -63,13 +63,13 @@ app.post('/api/v1/malebike', (req, res) => {
 	}
 	else{
 		while(i < malebike.length){
-			if(malebike[i] == req[0]){
+			if(malebike[i] == req.body.data){
 				console.log("ist bereits vorhanden");
 				return res.send("0");
 			}
 			else{i++}
 		}
-		malebike.push(req[0]);
+		malebike.push(req.body.data);
 		console.log("geht noch");
 		console.log(malebike);
 		return res.send("1");
