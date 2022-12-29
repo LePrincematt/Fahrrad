@@ -14,7 +14,7 @@ function malebikeAvailable() {
     .then(function (res) {
         console.log(res);
         let html = "<div>";
-        if(res[0] == "1") {
+        if(res.data == "1") {
             html += "<p>";
             html += "Verfügbar";
             html += "</p>";
