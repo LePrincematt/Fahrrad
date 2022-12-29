@@ -6,7 +6,7 @@
 function malebikeAvailable() {
     //male_availability.push(document.getElementById('date_malebike'));
     let male_availability = {
-        data: document.getElementById('date_malebike')
+        data: document.getElementById('date_malebike').value
     }
     console.log(male_availability.data);
     //console.log("Hat geklappt");
