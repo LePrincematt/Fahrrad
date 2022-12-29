@@ -6,7 +6,7 @@ let bodyParser = require('body-parser');
 
 let idCounter = 0;
 let customers = new Array ();
-let malebike = new Array ("a", "b", "c");
+let malebike = new Array ();
 let i = 0;
 
 app.use(bodyParser.urlencoded({enxtended: true}));
