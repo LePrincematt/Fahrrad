@@ -6,7 +6,7 @@ let bodyParser = require('body-parser');
 
 let idCounter = 0;
 let customers = new Array ();
-let malebike = new Array ();
+let malebike = new Array ("a", "b", "c");
 let i = 0;
 
 app.use(bodyParser.urlencoded({enxtended: true}));
@@ -56,19 +56,19 @@ app.put('/api/v1/customers/:userID', (req, res) => {
 
 //Verfübarkeit für ein Fahrrad prüfen
 app.post('/api/v1/malebike', (req, res) => {
-	/*if(malebike.length == 0){
-		return res.send(true);
+	if(malebike.length == 0){
+		return res.send("1");
 	}
 	else{
 		while(i < malebike.length){
 			if(malebike[i] == male_availability[0]){
-				return res.send(false);
+				return res.send("0");
 			}
 			else{i++}
 		}
 		malebike.push(male_availability.data);
-		return res.send(true);
-	}*/
+		return res.send("1");
+	}
 	console.log("Yes");
-	res.send("1");
+	//res.send("1");
 });
