@@ -47,6 +47,7 @@
             </div>
         </nav>
         <!-- Booking Section-->
+        </br>
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Booking Section Heading-->
@@ -68,21 +69,24 @@
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Name</label>
+                                <label for="name">Vollständiger Name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Name ist erforderlich.</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">E-Mail-Address</label>
+                                <label for="email">E-Mail-Adresse</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">E-Mail ist erforderlich.</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">E-Mail ist nicht korrekt.</div>
                             </div>
-                            <!-- Phone number input-->
+                            <!-- Number of bikes input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Telefonnummer</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">Telefonnummer ist erforderlich.</div>
+                                <input class="form-control" id="number" type="num" placeholder="1" data-sb-validations="required" />
+                                <label for="number">Anzahl</label>
+                                <div class="invalid-feedback" data-sb-feedback="number:required">Bitte geben Sie die Anzahl der Fahrräder an (Bsp.: 2).</div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="col"><p class="lead">Verfügbare Fahrräder für den ausgewählten Zeitraum: <div id="return_availibility"></div></p></div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
