@@ -1,14 +1,8 @@
-//const axios = require('axios'); 
-//import axios from 'axios';
-//let male_availability = [];
-//let html = "<div>";
-
+//Verfügbarkeit prüfen
 function malebikeAvailable() {
-    //male_availability.push(document.getElementById('date_malebike'));
     let male_availability = {
         data: document.getElementById('date_malebike').value
     }
-    //let male_availability = new Array (document.getElementById('date_malebike').value);
     console.log(male_availability.data);
     console.log("Hat geklappt");
     axios.post('/api/v1/malebike', male_availability)
@@ -34,4 +28,19 @@ function malebikeAvailable() {
     })
     //location.href = "login.html";
 
+};
+
+//Buchung und Benutzer speichern
+function saveBooking() {
+    let customer = {
+        name: document.getElementById('booking_name').value
+    }
+    console.log(customer.name);
+    console.log("Customer angelegt");
+    axios.post('/api/v1/booking', customer)
+    .then(function (res) {
+        console.log(res);
+        let html = "<div>";
+        location.href = "booking-successful.html";
+    })
 };
