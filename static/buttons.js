@@ -1,4 +1,4 @@
-let bike_id = 0;
+//let bike_id = 0;
 
 //Verfügbarkeit prüfen
 /*function malebikeAvailable() {
@@ -32,7 +32,7 @@ let bike_id = 0;
 
 };*/
 
-function checkAvailability() {
+function checkAvailability(bike_id) {
     let availability = {
         id: bike_id,
         data: document.getElementById('date_bike').value
