@@ -59,11 +59,17 @@ function checkAvailability(bike_id) {
 function checkNumber() {
     console.log("Numbers");
     let html = "<div>";
+    let html2 = "<div>"
     html += "<p>";
     html += "10.10.2022";
     html += "</p>";
     html += "</div>";
+    html2 += "<p>";
+    html2 += "10";
+    html2 += "</p>";
+    html2 += "</div>";
     document.getElementById("return_availability").innerHTML = html;
+    document.getElementById("return_number").innerHTML = html2;
 };
 
 //Buchung und Benutzer speichern
