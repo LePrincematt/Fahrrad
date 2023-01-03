@@ -39,17 +39,12 @@ function checkAvailability(bike_id) {
     }
     console.log(availability.data);
     console.log("Hat geklappt");
-    axios.post('/api/v1/malebike', availability)
+    axios.post('/api/v1/checkAvailability', availability)
     .then(function (res) {
         console.log(res);
         let html = "<div>";
-        if(res.data == "1") {
-            html += "<p>";
-            html += "Verfügbar";
-            html += "</p>";
-            html += "</div>";
-            document.getElementById("return_availibility").innerHTML = html;
-            console.log("Verfügbar");
+        if(res.data == "0") {
+            location.href = "availability.html";
         }
         else {
             html += "<p>";
@@ -57,11 +52,10 @@ function checkAvailability(bike_id) {
             html += "</p>";
             html += "</div>";
             document.getElementById("return_availibility").innerHTML = html;
-            console.log("Nicht verfügbar");
+            document.getElementById("booking_date").value = "Haaaaallloooooo";
+            console.log("Datum bestätigt");
         }
     })
-    //location.href = "login.html";
-
 };
 
 //Buchung und Benutzer speichern

@@ -88,7 +88,7 @@ app.put('/api/v1/customers/:userID', (req, res) => {
 	//res.send("1");
 });*/
 
-app.post('/api/v1/malebike', (req, res) => {
+app.post('/api/v1/checkAvailability', (req, res) => {
 	let i = 0;
 	let counter = 0;
 	let result = new Array ();
