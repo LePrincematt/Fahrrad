@@ -56,12 +56,12 @@ function checkAvailability(bike_id) {
 
 //Anzahl der Fahrräder ausgeben
 function checkNumber() {
-    console.log(current_bike_date);
+    console.log(current_checkout);
     console.log("Numbers");
     let html_date = "<div>";
     let html_objnumber = "<div>";
-    let objdate = current_bike_date[0].toString(); 
-    let objnumber = current_bike_date[1].toString();
+    let objdate = current_checkout[0].toString(); 
+    let objnumber = current_checkout[1].toString();
     console.log(objdate);
     console.log(objnumber);
     html_date += "<p>";
@@ -69,7 +69,7 @@ function checkNumber() {
     html_date += "</p>";
     html_date += "</div>";
     html_objnumber += "<p>";
-    html_objnumber += current_bike_date[1].toString();
+    html_objnumber += current_checkout[1].toString();
     html_objnumber += "</p>";
     html_objnumber += "</div>";
     document.getElementById("return_availability").innerHTML = html_date;
