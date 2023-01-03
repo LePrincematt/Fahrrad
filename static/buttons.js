@@ -1,4 +1,5 @@
-let current_bike_date = {date: "0", number: 0};
+let current_date = new Array();
+let current_numbersofbikes = new Array ();
 
 //Verfügbarkeit prüfen
 /*function malebikeAvailable() {
@@ -38,7 +39,7 @@ function checkAvailability(bike_id) {
         data: document.getElementById('date_bike').value
     }
     console.log(availability.data);
-    current_bike_date.push(document.getElementById('date_bike').value);
+    current_date.push(document.getElementById('date_bike').value);
     console.log("Hat geklappt");
     axios.post('/api/v1/checkAvailability', availability)
     .then(function (res) {
@@ -49,8 +50,9 @@ function checkAvailability(bike_id) {
         }
         else {
             console.log(res.body.number);
-            current_bike_date.number.push(res.body.number);
-            console.log(current_bike_date);
+            current_numbersofbikes.push(res.body.number);
+            console.log(current_date);
+            console.log(current_numbersofbikes);
             //location.href = "booking.html";
             console.log("Datum bestätigt");
         }
