@@ -38,7 +38,7 @@ function checkAvailability(bike_id) {
         data: document.getElementById('date_bike').value
     }
     console.log(availability.data);
-    current_bike_date.date.push(document.getElementById('date_bike').value);
+    current_bike_date.push(document.getElementById('date_bike').value);
     console.log("Hat geklappt");
     axios.post('/api/v1/checkAvailability', availability)
     .then(function (res) {
