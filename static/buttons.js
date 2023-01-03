@@ -49,7 +49,7 @@ function checkAvailability(bike_id) {
         else {
             current_bike_date.push(res.number);
             console.log(current_bike_date);
-            location.href = "booking.html";
+            //location.href = "booking.html";
             console.log("Datum bestätigt");
         }
     })
@@ -61,8 +61,10 @@ function checkNumber() {
     console.log("Numbers");
     let html_date = "<div>";
     let html_objnumber = "<div>";
-    let objdate = current_bike_date[0]; 
-    let objnumber = current_bike_date[1];
+    let objdate = current_bike_date[0].toString(); 
+    let objnumber = current_bike_date[1].toString();
+    console.log(objdate);
+    console.log(objnumber);
     html_date += "<p>";
     html_date += objdate;
     html_date += "</p>";
