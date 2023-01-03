@@ -60,13 +60,15 @@ function checkAvailability(bike_id) {
 function checkNumber() {
     console.log("Numbers");
     let html_date = "<div>";
-    let html_objnumber = "<div>"
+    let html_objnumber = "<div>";
+    let objdate = current_bike_date[0]; 
+    let objnumber = current_bike_date[1];
     html_date += "<p>";
-    html_date += current_bike_date[0];
+    html_date += objdate;
     html_date += "</p>";
     html_date += "</div>";
     html_objnumber += "<p>";
-    html_objnumber += current_bike_date[1];
+    html_objnumber += objnumber;
     html_objnumber += "</p>";
     html_objnumber += "</div>";
     document.getElementById("return_availability").innerHTML = html_date;
