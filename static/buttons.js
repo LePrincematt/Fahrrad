@@ -1,4 +1,4 @@
-let current_checkout = new Array();
+//let current_checkout = new Array();
 
 //Verfügbarkeit prüfen
 /*function malebikeAvailable() {
@@ -56,6 +56,18 @@ function checkAvailability(bike_id) {
 
 //Anzahl der Fahrräder ausgeben
 function checkNumber(current_checkout) {
+    axios.get('/api/v1/checkAvailability', availability) //ab hier weiter
+    .then(function (res) {
+        console.log(res);
+        if(res.data == "0") {
+            location.href = "availability.html";
+        }
+        else {
+            current_checkout.push(res.data.number);
+            location.href = "booking.html";
+            console.log("Datum bestätigt");
+        }
+    })
     console.log(current_checkout);
     console.log("Numbers");
     let html_date = "<div>";
