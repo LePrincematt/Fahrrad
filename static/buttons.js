@@ -52,7 +52,7 @@ function checkAvailability(bike_id) {
             html += "</p>";
             html += "</div>";
             location.href = "booking.html";
-            document.getElementById("return_availibility").innerHTML = html;
+            //document.getElementById("return_availibility").innerHTML = html;
             document.getElementById("booking_date").value = "Haaaaallloooooo";
             console.log("Datum bestätigt");
         }
