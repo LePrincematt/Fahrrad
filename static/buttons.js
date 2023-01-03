@@ -47,7 +47,7 @@ function checkAvailability(bike_id) {
             location.href = "availability.html";
         }
         else {
-            current_bike_date.push(res.body.number);
+            current_bike_date.push(res.number);
             console.log(current_bike_date);
             //location.href = "booking.html";
             console.log("Datum bestätigt");
