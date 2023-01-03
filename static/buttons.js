@@ -38,6 +38,7 @@ function checkAvailability(bike_id) {
         data: document.getElementById('date_bike').value
     }
     console.log(availability.data);
+    current_bike_date.push(document.getElementById('date_bike').value);
     console.log("Hat geklappt");
     axios.post('/api/v1/checkAvailability', availability)
     .then(function (res) {
@@ -46,7 +47,7 @@ function checkAvailability(bike_id) {
             location.href = "availability.html";
         }
         else {
-            current_bike_date.push(1);
+            current_bike_date.push(res.body.number);
             console.log(current_bike_date);
             //location.href = "booking.html";
             console.log("Datum bestätigt");
@@ -58,18 +59,18 @@ function checkAvailability(bike_id) {
 //Anzahl der Fahrräder ausgeben
 function checkNumber() {
     console.log("Numbers");
-    let html = "<div>";
-    let html2 = "<div>"
-    html += "<p>";
-    html += "10.10.2022";
-    html += "</p>";
-    html += "</div>";
-    html2 += "<p>";
-    html2 += "10";
-    html2 += "</p>";
-    html2 += "</div>";
-    document.getElementById("return_availability").innerHTML = html;
-    document.getElementById("return_number").innerHTML = html2;
+    let html_date = "<div>";
+    let html_objnumber = "<div>"
+    html_date += "<p>";
+    html_date += current_bike_date[0];
+    html_date += "</p>";
+    html_date += "</div>";
+    html_objnumber += "<p>";
+    html_objnumber += current_bike_date[1];
+    html_objnumber += "</p>";
+    html_objnumber += "</div>";
+    document.getElementById("return_availability").innerHTML = html_date;
+    document.getElementById("return_number").innerHTML = html_objnumber;
 };
 
 //Buchung und Benutzer speichern
