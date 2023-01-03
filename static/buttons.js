@@ -48,6 +48,7 @@ function checkAvailability(bike_id) {
             location.href = "availability.html";
         }
         else {
+            console.log(res.body.number);
             current_bike_date.number.push(res.body.number);
             console.log(current_bike_date);
             //location.href = "booking.html";
