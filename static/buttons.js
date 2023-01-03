@@ -55,7 +55,7 @@ function checkAvailability(bike_id) {
 
 
 //Anzahl der Fahrräder ausgeben
-function checkNumber() {
+function checkNumber(current_checkout) {
     console.log(current_checkout);
     console.log("Numbers");
     let html_date = "<div>";
