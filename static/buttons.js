@@ -1,4 +1,4 @@
-let current_bike_date = {date: String, number: integer};
+let current_bike_date = {date: "0", number: 0};
 
 //Verfügbarkeit prüfen
 /*function malebikeAvailable() {
