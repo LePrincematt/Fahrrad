@@ -7,7 +7,12 @@ let bodyParser = require('body-parser');
 let idCounter = 0;
 let customers = new Array ();
 let malebike = new Array ();
-//let i = 0;
+let bike_01 = new Array ();
+let bike_02 = new Array ();
+let bike_03 = new Array ();
+let bike_04 = new Array ();
+let bike_05 = new Array ();
+let bike_06 = new Array ();
 
 app.use(bodyParser.urlencoded({enxtended: true}));
 app.use(bodyParser.json());
@@ -55,11 +60,11 @@ app.put('/api/v1/customers/:userID', (req, res) => {
 
 
 //Verfübarkeit für ein Fahrrad prüfen
-app.post('/api/v1/malebike', (req, res) => {
+/*app.post('/api/v1/malebike', (req, res) => {
 	let i = 0;
-	console.log(req.body);
+	console.log(req.body); //data: value
 	if(malebike.length == 0){
-		malebike.push(req.body.data);
+		malebike.push(req.body.data); //value einfügen
 		console.log("length 0");
 		return res.send("1");
 	}
@@ -81,4 +86,77 @@ app.post('/api/v1/malebike', (req, res) => {
 	}
 	console.log("Yes");
 	//res.send("1");
+});*/
+
+app.post('/api/v1/malebike', (req, res) => {
+	let i = 0;
+	let counter = 0;
+	let result = new Array ();
+	console.log(req.body);
+	switch(req.body.id) {
+		case 1:
+			if(bike_01.length == 0){
+				console.log("length 0");
+				const obj = {value: "1", number: 10}
+				return res.send(obj);
+			}
+			else{
+				while(i < bike_01.length){
+					if(counter < 10){
+						if(bike_01[i] === req.body.data){
+							counter += 1;
+							i++;
+							console.log(counter);
+						}
+						else{i++;}
+					}
+					else{return res.send("0");}
+				}
+				const obj = {value: "1", number: 10-counter}
+				console.log(obj);
+				return res.send(obj);
+			}
+		case 2:
+			if(bike_02.length == 0){
+				console.log("length 0");
+				const obj = {value: "2", number: 10}
+				return res.send(obj);
+			}
+			else{
+				while(i < bike_02.length){
+					if(counter < 10){
+						if(bike_02[i] === req.body.data){
+							counter += 1;
+							i++;
+							console.log(counter);
+						}
+						else{i++;}
+					}
+					else{return res.send("0");}
+				}
+				const obj = {value: "2", number: 10-counter}
+				console.log(obj);
+				return res.send(obj);
+			}
+		case 3:
+			if(bike_03.length == 0){
+				const obj = {value: "3", number: 10}
+				return res.send(obj);
+			}
+			else{
+				while(i < bike_03.length){
+					if(counter < 10){
+						if(bike_03[i] === req.body.data){
+							counter += 1;
+							i++;
+						}
+						else{i++;}
+					}
+					else{return res.send("0");}
+				}
+				const obj = {value: "3", number: 10-counter}
+				return res.send(obj);
+			}
+	}
+	console.log("Sent");
 });
