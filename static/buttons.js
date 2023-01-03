@@ -60,7 +60,7 @@ function checkNumber() {
     console.log("Numbers");
     let html = "<div>";
     html += "<p>";
-    html += "Moin";
+    html += "10";
     html += "</p>";
     html += "</div>";
     document.getElementById("return_availability").innerHTML = html;
