@@ -89,8 +89,8 @@ app.put('/api/v1/customers/:userID', (req, res) => {
 });*/
 
 app.post('/api/v1/checkAvailability', (req, res) => {
-	let i = 0;
-	let counter = 0;
+	let i = 0; //Index-Durchzähler
+	let counter = 0; //Fahrradbestand
 	let result = new Array ();
 	console.log(req.body);
 	switch(req.body.id) {
