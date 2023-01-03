@@ -1,4 +1,4 @@
-//let bike_id = 0;
+let current_bike_date = new Array ();
 
 //Verfügbarkeit prüfen
 /*function malebikeAvailable() {
@@ -42,22 +42,28 @@ function checkAvailability(bike_id) {
     axios.post('/api/v1/checkAvailability', availability)
     .then(function (res) {
         console.log(res);
-        let html = "<div>";
         if(res.data == "0") {
             location.href = "availability.html";
         }
         else {
-            html += "<p>";
-            html += "Nicht verfügbar";
-            html += "</p>";
-            html += "</div>";
-            //location.href = "booking.html";
-            window.location.replace('/booking.html');
-            document.getElementById("return_availibility").innerHTML = html;
-            document.getElementById("booking_date").value = "Haaaaallloooooo";
+            current_bike_date.push(1);
+            console.log(current_bike_date);
+            location.href = "booking.html";
             console.log("Datum bestätigt");
         }
     })
+};
+
+
+//Anzahl der Fahrräder ausgeben
+function checkNumber() {
+    console.log("Numbers");
+    let html = "<div>";
+    html += "<p>";
+    html += current_bike_date[0];
+    html += "</p>";
+    html += "</div>";
+    document.getElementById("return_availability").innerHTML = html;
 };
 
 //Buchung und Benutzer speichern

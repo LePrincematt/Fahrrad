@@ -66,11 +66,6 @@
                             <div class="mb-3">
                                 <div class="col"><p class="lead">Um Ihre Buchung abzuschließen, benötigen wir noch weitere Informationen. (Pflichtfelder sind mit * gekennzeichnet)</p></div>
                             </div>
-                            <!-- Date input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" name="booking_date" id="booking_date" type="text" value=""/>
-                                <label for="booking">Datum</label>
-                            </div>
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" name="booking_name" id="booking_name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
@@ -92,7 +87,8 @@
                             </div>
                             <div class="mb-3">
                                 <div class="col"><p class="lead">Verfügbare Fahrräder für den ausgewählten Zeitraum: </p></div>
-                                <div id="return_availibility"></div>
+                                <button class="btn btn-primary btn-xl disabled" id="checkNumber" type="checkNumber" onclick="checkNumber()">Verfübare Fahrräder:</button>
+                                <div id="return_availability"></div>
                             </div>
                             <!-- Password input-->
                             <div class="form-floating mb-3">
