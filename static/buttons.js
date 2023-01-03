@@ -54,6 +54,7 @@ function checkAvailability(bike_id) {
             document.getElementById("return_availibility").innerHTML = html;
             document.getElementById("booking_date").value = "Haaaaallloooooo";
             console.log("Datum bestätigt");
+            location.href = "booking.html";
         }
     })
 };
