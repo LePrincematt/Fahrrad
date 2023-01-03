@@ -39,18 +39,15 @@ function checkAvailability(bike_id) {
     }
     console.log(availability.data);
     current_checkout.push(document.getElementById('date_bike').value);
-    console.log("Hat geklappt");
     axios.post('/api/v1/checkAvailability', availability)
     .then(function (res) {
         console.log(res);
-        console.log(res.data.number);
         if(res.data == "0") {
             location.href = "availability.html";
         }
         else {
             current_checkout.push(res.data.number);
-            console.log(current_checkout);
-            //location.href = "booking.html";
+            location.href = "booking.html";
             console.log("Datum bestätigt");
         }
     })
