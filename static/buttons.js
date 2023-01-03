@@ -43,6 +43,7 @@ function checkAvailability(bike_id) {
     axios.post('/api/v1/checkAvailability', availability)
     .then(function (res) {
         console.log(res);
+        console.log(res.number);
         if(res.data == "0") {
             location.href = "availability.html";
         }
