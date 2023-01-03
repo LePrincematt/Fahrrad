@@ -157,6 +157,63 @@ app.post('/api/v1/malebike', (req, res) => {
 				const obj = {value: "3", number: 10-counter}
 				return res.send(obj);
 			}
+		case 4:
+			if(bike_04.length == 0){
+				const obj = {value: "4", number: 10}
+				return res.send(obj);
+			}
+			else{
+				while(i < bike_04.length){
+					if(counter < 10){
+						if(bike_04[i] === req.body.data){
+							counter += 1;
+							i++;
+						}
+						else{i++;}
+					}
+					else{return res.send("0");}
+				}
+				const obj = {value: "4", number: 10-counter}
+				return res.send(obj);
+			}
+		case 5:
+			if(bike_05.length == 0){
+				const obj = {value: "5", number: 10}
+				return res.send(obj);
+			}
+			else{
+				while(i < bike_05.length){
+					if(counter < 10){
+						if(bike_05[i] === req.body.data){
+							counter += 1;
+							i++;
+						}
+						else{i++;}
+					}
+					else{return res.send("0");}
+				}
+				const obj = {value: "5", number: 10-counter}
+				return res.send(obj);
+			}
+		case 6:
+			if(bike_06.length == 0){
+				const obj = {value: "6", number: 10}
+				return res.send(obj);
+			}
+			else{
+				while(i < bike_06.length){
+					if(counter < 10){
+						if(bike_06[i] === req.body.data){
+							counter += 1;
+							i++;
+						}
+						else{i++;}
+					}
+					else{return res.send("0");}
+				}
+				const obj = {value: "6", number: 10-counter}
+				return res.send(obj);
+			}
 	}
 	console.log("Sent");
 });

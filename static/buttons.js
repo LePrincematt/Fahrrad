@@ -32,10 +32,10 @@ let bike_id = 0;
 
 };*/
 
-function malebikeAvailable(bike_id) {
+function checkAvailability(bike_id) {
     let availability = {
         id: bike_id,
-        data: document.getElementById('date_malebike').value
+        data: document.getElementById('date_bike').value
     }
     console.log(availability.data);
     console.log("Hat geklappt");
