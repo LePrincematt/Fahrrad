@@ -70,7 +70,7 @@ function checkNumber() {
     html_date += "</p>";
     html_date += "</div>";
     html_objnumber += "<p>";
-    html_objnumber += objnumber;
+    html_objnumber += current_bike_date[1].toString();
     html_objnumber += "</p>";
     html_objnumber += "</div>";
     document.getElementById("return_availability").innerHTML = html_date;
