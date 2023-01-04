@@ -67,9 +67,10 @@ function checkNumber() {
         html_date += objdate;
         html_date += "</p>";
         html_date += "</div>";
-        //html_objnumber += "<p>";
+        html_objnumber += "<p>";
+        html_objnumber += "Fahaaaaaa. "
         html_objnumber += objnumber;
-        //html_objnumber += "</p>";
+        html_objnumber += "</p>";
         html_objnumber += "</div>";
         document.getElementById("return_availability").innerHTML = html_date;
         document.getElementById("return_number").innerHTML = html_objnumber;
