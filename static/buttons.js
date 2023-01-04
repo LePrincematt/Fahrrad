@@ -55,7 +55,7 @@ function checkAvailability(bike_id) {
 
 
 //Anzahl der Fahrräder und Datum in der Buchung ausgeben
-function sessionHandling() {
+function checkNumber() {
     axios.post('/api/v1/session', )
     .then(function (res) {
         console.log(res);
