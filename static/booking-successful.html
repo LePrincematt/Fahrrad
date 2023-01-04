@@ -18,7 +18,7 @@
         <script type="text/javascript" src="buttons.js"></script>
         <script type="module" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     </head>
-    <body id="page-top" onload="checkNumber()">
+    <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
@@ -33,8 +33,8 @@
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Über uns</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">kontakt</a></li>
                         <div class="dropdown" class="nav-item mx-0 mx-lg-1">
-                        <button class="nav-link py-3 px-0 px-lg-3 rounded" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color:white; font-family: Montserrat; font-weight: bold; background-color: #2c3e50;border: 0ch; text-transform: uppercase;">
-                                    Benutzer
+                        <button class="nav-link py-3 px-0 px-lg-3 rounded" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="color:white; font-family: Montserrat; font-weight: bold; background-color: #2c3e50;border: 0ch; text-transform: uppercase;" href="/login.html">
+                                    Meine Buchungen
                              </button>
                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                             <li><a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>&nbsp; &nbsp;Benutzer name </li>
@@ -51,52 +51,11 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <!-- Booking Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Buchung für <div id="return_availability"></div></h2>
-                <!-- Booking Section Form-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Buchung erfolgreich!</h2>
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <div class="mb-3">
-                                <div class="col"><p class="lead">Um Ihre Buchung abzuschließen, benötigen wir noch weitere Informationen. (Pflichtfelder sind mit * gekennzeichnet)</p></div>
-                            </div>
-                            <div class="mb-3">
-                                <div class="col"><p class="lead" id="return_number"></p></div>
-                            </div>
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Vollständiger Name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Name ist erforderlich.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">E-Mail-Adresse</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">E-Mail ist erforderlich.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">E-Mail ist nicht korrekt.</div>
-                            </div>
-                            <!-- Number of bikes input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="number" type="num" placeholder="1" data-sb-validations="required" />
-                                <label for="number">Anzahl</label>
-                                <div class="invalid-feedback" data-sb-feedback="number:required">Bitte geben Sie die Anzahl der Fahrräder an (Bsp.: 2).</div>
-                            </div>
-                            <!-- Password input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="password" type="text" placeholder="Enter your password here..." data-sb-validations="required"/>
-                                <label for="password">Passwort festlegen</label>
-                                <div class="invalid-feedback" data-sb-feedback="password:required">Nachricht ist erforderlich.</div>
-                            </div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit" onclick="saveBooking()">Verbindlich buchen</button>
-                        </form>
+                        <button class="btn btn-primary btn-xl" id="myBookings" type="submit" href="">Meine Buchungen</button>
+                        <button class="btn btn-primary btn-xl" id="Homepage" type="submit" href="/index.html">Zurück zur Homepage</button>
                     </div>
                 </div>
             </div>
@@ -147,10 +106,5 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>
