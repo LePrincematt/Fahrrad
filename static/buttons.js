@@ -38,7 +38,7 @@ function checkAvailability(bike_id) {
         data: document.getElementById('date_bike').value
     }
     console.log(availability.data);
-    current_checkout.push(document.getElementById('date_bike').value);
+    //current_checkout.push(document.getElementById('date_bike').value);
     axios.post('/api/v1/checkAvailability', availability)
     .then(function (res) {
         console.log(res);
@@ -46,7 +46,7 @@ function checkAvailability(bike_id) {
             location.href = "availability.html";
         }
         else {
-            current_checkout.push(res.data.number);
+            //current_checkout.push(res.data.number);
             location.href = "booking.html";
             console.log("Datum bestätigt");
         }
