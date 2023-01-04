@@ -13,7 +13,7 @@ let bike_03 = new Array ();
 let bike_04 = new Array ();
 let bike_05 = new Array ();
 let bike_06 = new Array ();
-let current_checkout = new Array ();
+let sessionHandler = new Array ();
 
 app.use(bodyParser.urlencoded({enxtended: true}));
 app.use(bodyParser.json());
@@ -99,6 +99,7 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 			if(bike_01.length == 0){
 				console.log("length 0");
 				const obj = {value: "1", number: 10}
+				sessionHandler.push(req.body.data, 10-counter); //Session-Handling
 				return res.send(obj);
 			}
 			else{
@@ -114,6 +115,7 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 					else{return res.send("0");}
 				}
 				const obj = {value: "1", number: 10-counter}
+				sessionHandler.push(req.body.data, 10-counter); //Session-Handling
 				console.log(obj);
 				return res.send(obj);
 			}
@@ -121,7 +123,7 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 			if(bike_02.length == 0){
 				console.log("length 0");
 				const obj = {value: "2", number: 10}
-				current_checkout.push(req.body.data, 10-counter); //neu
+				sessionHandler.push(req.body.data, 10-counter); //Session-Handling
 				return res.send(obj);
 			}
 			else{
@@ -137,7 +139,7 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 					else{return res.send("0");}
 				}
 				const obj = {value: "2", number: 10-counter}
-				current_checkout.push(req.body.data, 10-counter); //neu
+				sessionHandler.push(req.body.data, 10-counter); //Session-Handling
 				console.log(obj);
 				return res.send(obj);
 			}
@@ -223,6 +225,7 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 
 //Session-Handling
 app.post('/api/v1/session', (req, res) => {
-	console.log(current_checkout);
-	return res.send(current_checkout);
+	console.log(sessionHandler);
+	res.send(sessionHandler);
+	return sessionHandler.length = 0;
 })

@@ -54,19 +54,15 @@ function checkAvailability(bike_id) {
 };
 
 
-//Anzahl der Fahrräder ausgeben
-function checkNumber() {
+//Anzahl der Fahrräder und Datum in der Buchung ausgeben
+function sessionHandling() {
     axios.post('/api/v1/session', )
     .then(function (res) {
         console.log(res);
-        console.log("Numbers");
         let html_date = "<div>";
         let html_objnumber = "<div>";
         let objdate = res.data[0].toString(); 
-        console.log(objdate);
         let objnumber = res.data[1].toString();
-        console.log(objdate);
-        console.log(objnumber);
         html_date += "<p>";
         html_date += objdate;
         html_date += "</p>";
