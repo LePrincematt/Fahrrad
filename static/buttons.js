@@ -56,7 +56,7 @@ function checkAvailability(bike_id) {
 
 //Anzahl der Fahrräder ausgeben
 function checkNumber() {
-    axios.get('/api/v1/session', ) //ab hier weiter
+    axios.post('/api/v1/session', ) //ab hier weiter
     .then(function (res) {
         console.log(res);
         console.log(current_checkout);
