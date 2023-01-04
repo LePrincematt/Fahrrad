@@ -35,7 +35,7 @@
 function checkAvailability(bike_id) {
     let availability = {
         id: bike_id,
-        data: document.getElementById('date_bike').value
+        data: document.getElementById('date_bike'+ bike_id).value
     }
     console.log(availability.data);
     //current_checkout.push(document.getElementById('date_bike').value);
