@@ -68,7 +68,7 @@ function checkNumber() {
         html_date += "</p>";
         html_date += "</div>";
         html_objnumber += "<p>";
-        html_objnumber += "Fahaaaaaa. "
+        html_objnumber += "Verfügbare Fahrräder an diesem Tag: "
         html_objnumber += objnumber;
         html_objnumber += "</p>";
         html_objnumber += "</div>";
