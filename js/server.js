@@ -222,7 +222,7 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 });
 
 //Session-Handling
-app.post('/api/v1/malebike', (req, res) => {
+app.post('/api/v1/session', (req, res) => {
 	console.log(current_checkout);
 	return res.send(current_checkout);
 })

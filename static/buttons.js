@@ -55,37 +55,29 @@ function checkAvailability(bike_id) {
 
 
 //Anzahl der Fahrräder ausgeben
-function checkNumber(current_checkout) {
-    axios.get('/api/v1/checkAvailability', availability) //ab hier weiter
+function checkNumber() {
+    axios.get('/api/v1/session', ) //ab hier weiter
     .then(function (res) {
         console.log(res);
-        if(res.data == "0") {
-            location.href = "availability.html";
-        }
-        else {
-            current_checkout.push(res.data.number);
-            location.href = "booking.html";
-            console.log("Datum bestätigt");
-        }
+        console.log(current_checkout);
+        console.log("Numbers");
+        let html_date = "<div>";
+        let html_objnumber = "<div>";
+        let objdate = res.data.number.toString(); 
+        let objnumber = res.data.date.toString();
+        console.log(objdate);
+        console.log(objnumber);
+        html_date += "<p>";
+        html_date += objdate;
+        html_date += "</p>";
+        html_date += "</div>";
+        html_objnumber += "<p>";
+        html_objnumber += current_checkout[1].toString();
+        html_objnumber += "</p>";
+        html_objnumber += "</div>";
+        document.getElementById("return_availability").innerHTML = html_date;
+        document.getElementById("return_number").innerHTML = html_objnumber;
     })
-    console.log(current_checkout);
-    console.log("Numbers");
-    let html_date = "<div>";
-    let html_objnumber = "<div>";
-    let objdate = current_checkout[0].toString(); 
-    let objnumber = current_checkout[1].toString();
-    console.log(objdate);
-    console.log(objnumber);
-    html_date += "<p>";
-    html_date += objdate;
-    html_date += "</p>";
-    html_date += "</div>";
-    html_objnumber += "<p>";
-    html_objnumber += current_checkout[1].toString();
-    html_objnumber += "</p>";
-    html_objnumber += "</div>";
-    document.getElementById("return_availability").innerHTML = html_date;
-    document.getElementById("return_number").innerHTML = html_objnumber;
 };
 
 //Buchung und Benutzer speichern
