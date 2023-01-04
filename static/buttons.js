@@ -63,7 +63,8 @@ function checkNumber() {
         let html_date = "<div>";
         let html_objnumber = "<div>";
         let objdate = res.data[0].toString(); 
-        let objnumber = res.data.date.toString();
+        console.log(objdate);
+        let objnumber = res.data[1].toString();
         console.log(objdate);
         console.log(objnumber);
         html_date += "<p>";
@@ -71,7 +72,7 @@ function checkNumber() {
         html_date += "</p>";
         html_date += "</div>";
         html_objnumber += "<p>";
-        html_objnumber += current_checkout[1].toString();
+        html_objnumber += objnumber;
         html_objnumber += "</p>";
         html_objnumber += "</div>";
         document.getElementById("return_availability").innerHTML = html_date;
