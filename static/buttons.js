@@ -62,7 +62,7 @@ function checkNumber() {
         console.log("Numbers");
         let html_date = "<div>";
         let html_objnumber = "<div>";
-        let objdate = res.data.number.toString(); 
+        let objdate = res.data[0].toString(); 
         let objnumber = res.data.date.toString();
         console.log(objdate);
         console.log(objnumber);
