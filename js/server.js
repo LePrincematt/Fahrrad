@@ -24,6 +24,7 @@ let server = app.listen(8080, function () {
 	console.log("Webserver is running on port " + port);
 });
 
+/*
 //REST API abrufen
 app.get('/api/v1/customers', (req, res) => {
 	let userID = Object.keys(customers);	//Gibt Liste der Schlüssel aus Customers zurück
@@ -61,7 +62,7 @@ app.put('/api/v1/customers/:userID', (req, res) => {
 
 
 //Verfübarkeit für ein Fahrrad prüfen
-/*app.post('/api/v1/malebike', (req, res) => {
+app.post('/api/v1/malebike', (req, res) => {
 	let i = 0;
 	console.log(req.body); //data: value
 	if(malebike.length == 0){
@@ -228,4 +229,24 @@ app.post('/api/v1/session', (req, res) => {
 	console.log(sessionHandler);
 	res.send(sessionHandler);
 	return sessionHandler.length = 0;
+})
+
+//Buchung durchführen
+app.post('/api/v1/booking', (req, res) => {
+	console.log(req.body);
+	if(req.body.number > sessionHandler[1]){
+		return res.send("0")
+	}
+	else{
+		let userid = customers.length + 1;
+		let user = {name: req.body.name, 
+			email: req.body.email, 
+			date: sessionHandler[0], 
+			number: req.body.number, 
+			password: req.body.password, 
+			id: userid}
+		customers[userid] = user;
+		console.log(customers);
+		return res.send("1");
+	}
 })

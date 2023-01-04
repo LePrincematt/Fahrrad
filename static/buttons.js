@@ -80,14 +80,24 @@ function checkNumber() {
 //Buchung und Benutzer speichern
 function saveBooking() {
     let customer = {
-        name: document.getElementById('booking_name').value
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        number: document.getElementById('number').value,
+        password: document.getElementById('password').value
     }
     console.log(customer.name);
+    console.log(customer);
     console.log("Customer angelegt");
     axios.post('/api/v1/booking', customer)
     .then(function (res) {
         console.log(res);
-        let html = "<div>";
-        location.href = "booking-successful.html";
+        if(res.data == "0") {
+            alert('Anzahl nicht verfügbar.');
+            document.getElementById('number').value = 1;
+        }
+        else {
+            //location.href = "booking-successful.html";
+            console.log("Buchung bestätigt");
+        }
     })
 };
