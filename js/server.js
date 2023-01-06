@@ -99,8 +99,8 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 		case 1:
 			if(bike_01.length == 0){
 				console.log("length 0");
-				const obj = {value: "1", number: 10}
-				sessionHandler.push(req.body.data, 10-counter); //Session-Handling
+				const obj = {value: "1", number: 10};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id); //Session-Handling
 				return res.send(obj);
 			}
 			else{
@@ -115,16 +115,16 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 					}
 					else{return res.send("0");}
 				}
-				const obj = {value: "1", number: 10-counter}
-				sessionHandler.push(req.body.data, 10-counter); //Session-Handling
+				const obj = {value: "1", number: 10-counter};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id); //Session-Handling
 				console.log(obj);
 				return res.send(obj);
 			}
 		case 2:
 			if(bike_02.length == 0){
 				console.log("length 0");
-				const obj = {value: "2", number: 10}
-				sessionHandler.push(req.body.data, 10-counter); //Session-Handling
+				const obj = {value: "2", number: 10};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id); //Session-Handling
 				return res.send(obj);
 			}
 			else{
@@ -139,14 +139,15 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 					}
 					else{return res.send("0");}
 				}
-				const obj = {value: "2", number: 10-counter}
-				sessionHandler.push(req.body.data, 10-counter); //Session-Handling
+				const obj = {value: "2", number: 10-counter};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id); //Session-Handling
 				console.log(obj);
 				return res.send(obj);
 			}
 		case 3:
 			if(bike_03.length == 0){
-				const obj = {value: "3", number: 10}
+				const obj = {value: "3", number: 10};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id);
 				return res.send(obj);
 			}
 			else{
@@ -160,12 +161,14 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 					}
 					else{return res.send("0");}
 				}
-				const obj = {value: "3", number: 10-counter}
+				const obj = {value: "3", number: 10-counter};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id);
 				return res.send(obj);
 			}
 		case 4:
 			if(bike_04.length == 0){
-				const obj = {value: "4", number: 10}
+				const obj = {value: "4", number: 10};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id);
 				return res.send(obj);
 			}
 			else{
@@ -179,12 +182,14 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 					}
 					else{return res.send("0");}
 				}
-				const obj = {value: "4", number: 10-counter}
+				const obj = {value: "4", number: 10-counter};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id);
 				return res.send(obj);
 			}
 		case 5:
 			if(bike_05.length == 0){
-				const obj = {value: "5", number: 10}
+				const obj = {value: "5", number: 10};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id);
 				return res.send(obj);
 			}
 			else{
@@ -198,12 +203,14 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 					}
 					else{return res.send("0");}
 				}
-				const obj = {value: "5", number: 10-counter}
+				const obj = {value: "5", number: 10-counter};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id);
 				return res.send(obj);
 			}
 		case 6:
 			if(bike_06.length == 0){
-				const obj = {value: "6", number: 10}
+				const obj = {value: "6", number: 10};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id);
 				return res.send(obj);
 			}
 			else{
@@ -217,7 +224,8 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 					}
 					else{return res.send("0");}
 				}
-				const obj = {value: "6", number: 10-counter}
+				const obj = {value: "6", number: 10-counter};
+				sessionHandler.push(req.body.data, 10-counter, req.body.id);
 				return res.send(obj);
 			}
 	}
@@ -234,19 +242,29 @@ app.post('/api/v1/session', (req, res) => {
 //Buchung durchführen
 app.post('/api/v1/booking', (req, res) => {
 	console.log(req.body);
+	let i = 0;
 	if(req.body.number > sessionHandler[1]){
 		return res.send("0")
 	}
 	else{
-		let userid = customers.length + 1;
-		let user = {name: req.body.name, 
-			email: req.body.email, 
-			date: sessionHandler[0], 
-			number: req.body.number, 
-			password: req.body.password, 
-			id: userid}
-		customers[userid] = user;
-		console.log(customers);
+		while(i < customers.length){
+			if(){
+				//Customer ID schon vorhanden
+				//bike_id, number, date bei dem Customer einfügen
+			}
+			else{
+			let userid = customers.length + 1;
+			let user = {name: req.body.name, 
+				email: req.body.email, 
+				date: sessionHandler[0],
+				bike_id: sessionHandler[1], 
+				number: req.body.number, 
+				password: req.body.password, 
+				id: userid}
+			customers[userid] = user;
+			console.log(customers);
+			}
+		}
 		return res.send("1");
 	}
 })
