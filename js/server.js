@@ -247,24 +247,30 @@ app.post('/api/v1/booking', (req, res) => {
 		return res.send("0")
 	}
 	else{
-		while(i < customers.length){
-			if(){
-				//Customer ID schon vorhanden
-				//bike_id, number, date bei dem Customer einfügen
-			}
-			else{
-			let userid = customers.length + 1;
-			let user = {name: req.body.name, 
-				email: req.body.email, 
+		if(customers.some(user => user.email === req.body.email) == true){
+			//Customer ID schon vorhanden
+			//bike_id, number, date bei dem Customer einfügen
+			let index = customers.findIndex(user => user.email === req.body.email);
+			let user = {
+				bike_id: sessionHandler[2],
 				date: sessionHandler[0],
-				bike_id: sessionHandler[1], 
-				number: req.body.number, 
-				password: req.body.password, 
-				id: userid}
+				number: req.body.number
+			}
+			customers[index].bikes.push(user);
+		}
+		else{
+			let userid = customers.length + 1;
+			let user = {id: userid,
+				name: req.body.name, 
+				email: req.body.email, bikes: {
+					bike_id: sessionHandler[2],
+					date: sessionHandler[0],
+					number: req.body.number
+				},
+				password: req.body.password}
 			customers[userid] = user;
 			console.log(customers);
-			}
 		}
-		return res.send("1");
 	}
+	return res.send("1");
 })

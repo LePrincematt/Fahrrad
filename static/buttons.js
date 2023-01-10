@@ -93,7 +93,7 @@ function saveBooking() {
         console.log(res);
         if(res.data == "0") {
             alert('Anzahl nicht verfügbar.');
-            document.getElementById('number').value = 1;
+            //document.getElementById('number').value = 1;
         }
         else {
             //location.href = "booking-successful.html";
