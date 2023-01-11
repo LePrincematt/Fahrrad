@@ -126,6 +126,7 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 				console.log("length 0");
 				const obj = {value: "2", number: 10};
 				sessionHandler.push(req.body.data, 10-counter, req.body.id); //Session-Handling
+				console.log(sessionHandler);
 				return res.send(obj);
 			}
 			else{
