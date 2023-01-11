@@ -267,7 +267,7 @@ app.post('/api/v1/booking', (req, res) => {
 			let user = {id: userid,
 				name: req.body.name, 
 				email: req.body.email, bikes: {
-					bike_id: sessionHandler.value[2],
+					bike_id: sessionHandler[2],
 					date: sessionHandler[0],
 					number: req.body.number
 				},
