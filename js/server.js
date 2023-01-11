@@ -5,6 +5,7 @@ let app = express();
 let bodyParser = require('body-parser');
 
 let idCounter = 0;
+let booking_id = 0;
 let customers = new Array ();
 let malebike = new Array ();
 let bike_01 = new Array ();
