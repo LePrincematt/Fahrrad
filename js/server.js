@@ -237,8 +237,8 @@ app.post('/api/v1/checkAvailability', (req, res) => {
 //Session-Handling
 app.post('/api/v1/session', (req, res) => {
 	console.log(sessionHandler);
-	res.send(sessionHandler);
-	return sessionHandler.length = 0;
+	return res.send(sessionHandler);
+	//return sessionHandler.length = 0;
 })
 
 //Buchung durchführen
@@ -247,6 +247,7 @@ app.post('/api/v1/booking', (req, res) => {
 	console.log(sessionHandler);
 	let i = 0;
 	if(req.body.number > sessionHandler[1]){
+		sessionHandler.length = 0;
 		return res.send("0")
 	}
 	else{
@@ -275,5 +276,6 @@ app.post('/api/v1/booking', (req, res) => {
 			console.log(customers);
 		}
 	}
+	sessionHandler.length = 0;
 	return res.send("1");
 })
