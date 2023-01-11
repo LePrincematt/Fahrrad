@@ -244,6 +244,7 @@ app.post('/api/v1/session', (req, res) => {
 //Buchung durchführen
 app.post('/api/v1/booking', (req, res) => {
 	console.log(req.body);
+	console.log(sessionHandler);
 	let i = 0;
 	if(req.body.number > sessionHandler[1]){
 		return res.send("0")
