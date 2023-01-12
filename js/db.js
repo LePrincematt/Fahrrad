@@ -13,14 +13,14 @@ function createDbConnection() {
 }
 
 function createTable(db) {
-    db.exec(`
+    db.append(`
         CREATE TABLE customers (
             customer_id INTEGER NOT NULL PRIMARY KEY,
             name VARCHAR(50) NOT NULL,
             email VARCHAR(50) NOT NULL,
             password VARCHAR(50) NOT NULL,
         );
-    `)
+    `);
 }
 
 module.exports = createDbConnection();
