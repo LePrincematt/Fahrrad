@@ -20,7 +20,7 @@ function createTable(db) {
             email VARCHAR(50) NOT NULL,
             password VARCHAR(50) NOT NULL,
         );
-    `);
+    `)
 }
 
 module.exports = createDbConnection();
