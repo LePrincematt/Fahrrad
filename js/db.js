@@ -1,4 +1,4 @@
-let sqlite3 = require("sqlite3").verbose();
+let sqlite3 = require('sqlite3').verbose();
 let filepath = "./webshop.db";
 
 function createDbConnection() {
