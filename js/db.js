@@ -21,17 +21,16 @@ function createTable(db) {
             password VARCHAR(50) NOT NULL,
         );
     `);
-    db.exec(`
-        CREATE TABLE bookings (
-            bookings_id INTEGER NOT NULL,
-            bike_id INTEGER NOT NULL,
-            booking_date VARCHAR(50) NOT NULL,
-            number INTEGER NOT NULL,
-            customer_id INTEGER NOT NULL,
-            PRIMARY KEY (bookings_id),
-            FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
-        )
-    `)
 }
 
 module.exports = createDbConnection();
+
+/*CREATE TABLE bookings (
+    bookings_id INTEGER NOT NULL,
+    bike_id INTEGER NOT NULL,
+    booking_date VARCHAR(50) NOT NULL,
+    number INTEGER NOT NULL,
+    customer_id INTEGER NOT NULL,
+    PRIMARY KEY (bookings_id),
+    FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
+)*/
