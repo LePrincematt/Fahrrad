@@ -18,7 +18,18 @@ function createTable(db) {
             customer_id INTEGER NOT NULL PRIMARY KEY,
             name VARCHAR(50) NOT NULL,
             email VARCHAR(50) NOT NULL,
-            password VARCHAR(50) NOT NULL,
+            password VARCHAR(50) NOT NULL
+        );
+    `);
+    db.exec(`
+        CREATE TABLE bookings (
+            bookings_id INTEGER NOT NULL,
+            bike_id INTEGER NOT NULL,
+            booking_date VARCHAR(50) NOT NULL,
+            number INTEGER NOT NULL,
+            customer_id INTEGER NOT NULL,
+            PRIMARY KEY (bookings_id),
+            FOREIGN KEY (customer_id) REFERENCES customers (customer_id)
         );
     `);
 }
