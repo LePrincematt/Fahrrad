@@ -13,7 +13,7 @@ function createDbConnection() {
 }
 
 function createTable(db) {
-    db.execute(`
+    db.exec(`
         CREATE TABLE customers (
             customer_id INTEGER NOT NULL PRIMARY KEY,
             name VARCHAR(50) NOT NULL,
